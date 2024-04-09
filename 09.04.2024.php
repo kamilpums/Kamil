@@ -54,7 +54,37 @@
        echo "<br>" .$tab [2][0]. "<br>".$tab[2][1];
        $tab[2][0]="Klasa3Tie";
        echo "<br>".$tab[2][0];
-       
+    
+       echo"<h1>Tablice asocjacyjne</h1>";
+       //Tablice asocjacyjne są to tabele które zamiast liczb w indeksach zawierają nazwy.Ma to na celu ułatwienie dostępu do danych i łatwiejszego poruszania sie po tabliacach.
+       //Na przykład jak indeksy będą sie zazywać "imie"....
+       //deklaracja 1 sposób
+       $asocjacja['imie']="Kamil";
+       $asocjacja['nazwisko']="Ślimak";
+       $asocjacja['wiek']=18;
+       //wypisanie wartości
+       echo "<br>";
+       print_r($asocjacja);
+       echo "<br>";
+       echo 'nazwisko: '.$asocjacja['nazwisko'];
+       //Zadanie na lekcji
+       $produkt['jogurt']=1.5;
+       $produkt['masło']=4.3;
+       $produkt['mleko']=2.56;
+       $produkt['ser']=35.2;
+       $produkt['chleb']=5.4;
+       $produkt['szynka']=52.6;
+       $produkt['pomidor']=21.4;
+       echo"<br>";
+       echo 'szynka: '.$produkt['szynka'];
+       echo"<br>";
+       echo 'pomidor: '.$produkt['pomidor'];
+       echo"<br>";
+       echo 'ser: '.$produkt['ser'];
+       echo"<br>";
+       echo 'masło: '.$produkt['masło'];
+       echo"<br>";
+       print_r($produkt);
 
 
      
