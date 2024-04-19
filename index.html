@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radosław Kozakiewicz</title>
+    <title>Document</title>
 </head>
 <body>
-    moj pierwszy dokument
+    <form action="index.html" method="get4">
+        <label for="imie_i_nazwisko">Imię i nazwisko</label>
+        <input name="imie_i_nazwisko" type="imie_i_nazwisko" value="" placeholder="Wpisz swoje imie i nazwisko">
+        <br>
+        <lable for="narodowsc">Narodowsc</lable>
+        <input type="narodowsc" id="narodowsc" value="" type="text" placeholder="Np.polska">
+        <br>
+        <lable for="e-mail">E-mail</lable>
+        <input type="e-mail" id="narodowsc" value="" type="email" placeholder="Np.kamil.strzelecki@gmail.com">
+        <br>
+        <lable for="haslo">Hasło</lable>
+        <input type="haslo" id="haslo" value="" type="password" placeholder="Wpisz swoje hasło">
+        <br>
+        <label for="homepage">Podaj linka</label>
+        <input type="url"id="homepage" value="" name="homepage" placeholder="Dawaj linka">
+        <br>
+        <lable for="plik">Dołącz plik</lable>
+        <input type="file" id="plik" name="nazwa_pliku">
+        <br>
+        <label for="favcolor">Kolor</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000" placeholder="Wybierz Kolor">
+        <br>
+        <label for="urodziny">Data urodzin</label>
+        <input type="date" id="urodziny" name="urodziny" min="2024-04-18" max="2024-04-30" placeholder="Data urodzin">
+        <br>
+        <label for="number">Podsj liczbe 1:5</label>
+        <input type="number" id="number" name="number" min="1" max="5">
+        <br>
+        <lable for="vehicle1"> I have a bike</lable>
+        <input type="checkbox" id="vehicle1" name="czy_rower">
+        <br>
+        <input type="radio" id="prezent_rower" value="rower" name="prezent">
+        <label for="prezent_rower">Rower</label>
+        <input type="radio" id="prezent_rolki" value="rolki" name="prezent">
+        <label for="prezent_rolki">Rolki</label>
+        <input type="radio" id="prezent_sanki" value="sanki" name="prezent">
+        <label for="prezent_sanki">Sanki</label>
+        <br>
+        <label for="country">Wybierz kraj</label>
+        <br>
+        <select name="kraj" id="country">
+        <optgroup lable="Kraje w Europie"></optgroup>    
+            <option value="Polska">Polska</option>
+            <option value="Hiszpania">hiszpania</option>
+            <option value="Włochy">Włochy</option>
+            <option value="Niemc">Niemcy</option>
+        </optgroup>    
+        </select>
+        <select name="kraj" id="country">
+            <optgroup lable="Kraje poza Europa"></optgroup>    
+                <option value="Tunezja">Tunezja</option>
+                <option value="Malezja">Malezja</option>
+                <option value="Afryka">Afryka</option>
+                <option value="RPA">RPA</option>
+        </select>        
+        <br><br>
+        <input type="submit" value="Wyslij formularz">
+        <input type="reset"value="Wyczysc formularz">
+    </form>    
 </body>
 </html>
