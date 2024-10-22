@@ -1,0 +1,72 @@
+#main{
+    width: 1000px;
+    height: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: darkgreen;
+}
+#dol, #gora{
+    width: 960px;
+    height: 350px;
+    padding: 20px;
+    background-color: chocolate;
+}
+#gora{
+    margin-bottom: 20px;
+}
+#gora1, #gora2, #dol1, #dol2{
+    padding: 20px;
+    height: 310px;
+    float: left;
+    border: none;
+    background-color: blue;
+}
+#gora1{
+    width: 400px;
+    margin-right: 20px;
+}
+#gora2{
+    width: 460px;
+}
+#dol1{
+    width: 600px;
+    margin-right: 20px;
+}
+#dol2{
+    width: 260px;
+}
+table,td{
+    border: 1px solid black;
+    border-collapse: collapse solid;
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+</head>
+<body>
+    <?php
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        echo "Jest ustawiona metoda POST";
+        ff(empty($_POST['liczba1'])){
+            echo "Brak pierwszej liczby";
+        }else{
+            echo "Pierwsza liczba to: ".$_POST['liczba1']."<br>";
+        }
+        if(empty($_POST['liczba2'])){
+            ech "Brak drugiej liczby"
+        }else{
+            echo "Druga liczba to: ".$_POST['liczba2']."<br>";
+        }
+    }
+    ?>
+</body>
+</html>
