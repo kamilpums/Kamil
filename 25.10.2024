@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zadanie 15.10.2024</title>
+</head>
+<body>
+    <section id="main">
+        <section id="lewa">
+            <section id="lewa1">
+
+            </section>
+            <section id="lewa2">
+
+            </section>
+
+        </section>
+        <section id="prawa">
+            <section id="prawa1">
+                <form method="POST" action="index1.php">
+                    <fieldset>
+                        <legend>Formularz</legend>
+                        <label for="Etykieta">Prosty kalkulator</label>
+                        <br>
+                        <label for="select">Wybierz dziiałanie</label>
+                        <select name="dzialania">
+                        <select>
+                            <option id="dodawanie" name="dodawanie">dodawanie</option>
+                            <option id="odejmowanie" name="odejmowanie">odejmowanie</option>
+                            <option id="dzielenie" value="dzielenie">dzielenie</option>
+                            <option id="mnozenie" name="mnozenie">mnozenie</option>
+                         </select>
+                        <br>
+                        <label for="liczba1">Pierwsza liczba</label>    
+                        <input type="number" id="liczba1" name="liczba1">
+                        <br>
+                        <label for="liczba2">Druga liczba</label>    
+                        <input type="number" id="liczba2" name="liczba2">
+                        <br>
+                        </select>
+                        <button type="reset">Reset</button>
+                        <button type="submit" id="zapisz">Zapisz</button>
+                    </fieldset>
+                </form>    
+</body>
+</html>
+
+
+
+///////////////////////////////////
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        $liczba1=$_POST['liczba1'];
+        $liczba2=$_POST['liczba2'];
+        $dzialania=$_POST['dzialania'];
+        switch($dzialania){
+            case"dodawanie";
+            echo "Suma liczb to: ".$liczba1+$liczba2;
+            break;
+            case"odejmowanie";
+            echo "Różnica liczb to: ".$liczba1-$liczba2;
+            break;
+            case"mnozenie";
+            echo "Iloczyn liczb to: ".$liczba1*$liczba2;
+            break;
+            case"dzielnie";
+            echo "Iloraz liczb to: ".$liczba1/$liczba2;
+            break;
+        }
+    }
+    ?>
+</body>
+</html>
+
+/////////////////////////
+
+
+*{
+    font-family: century,serif;
+    float: none;
+
+}
+button{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 0px;
+    color: blue;
+    background-color: burlywood;
+}
+button:hover{
+    background-color: cornflowerblue;
+}
+#main{
+    width: 1000px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: goldenrod;
+}
+#prawa, #lewa{
+    width: 780px;
+    float: left;
+    padding: 10px;
+    background-color: darkgreen;
+}
+#lewa{
+    width: 600px;
+    margin-right: 10px;
+}
+#prawa{
+    width: 350px;
+}
+#prawa1{
+    height: 270px;
+    margin-bottom: 10px;
+    background-color: grey;
+}
+#lewa1{
+    height: 600px;
+    margin-bottom: 10px;
+    font-family: cursive;
+    background-color: blue;
+}
+#lewa2{
+    height: 170px;
+    margin-bottom: bold;
+    background-color: aquamarine;
+}
+////////////////////
