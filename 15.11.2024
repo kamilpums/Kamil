@@ -1,0 +1,115 @@
+<?php
+    session_start()
+?>    
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <p>Logowanie za wykorzystaniem sesji</p>
+</header>    
+    <main>
+        <form method="post">
+            <fieldset>
+                <label for="login">Podaj login</label>
+                <input type="text" name="login" id="login" required>
+                <br>
+                <label for="haslo">Podaj haslo</label>
+                <input type="text" name="haslo" id="haslo" required>
+                <br><input type="submit" value="loguj">
+            </fieldset>
+        </form>    
+    </main>
+    <?php
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        if(empty($_POST["login"])|| empty($_POST['haslo'])){
+            echo "Podaj wszytskie dane";
+        }else{
+        $login=$_POST["login"];
+        $haslo=$_POST["haslo"];
+        if($login=="kamil" && $haslo=="Cygan123@"){
+            echo "<br><br> Jesteśmy zalogowani";
+            $_SESSION['zalogowany']=true;
+        }else{
+        echo "<br><br> Błędny login lub hasło";
+        }
+    }
+    }else{    
+        echo "Nie podano danych";
+    }
+    ?>
+    <footer>
+        <p>Tutaj pojawi sie komunikat</p>
+        <p>
+            <?php
+            if(isset($_SESSION['zalogowany'])){
+                if($_SESSION['zalogowany']){
+                echo "Jesteś zalogowany";
+            }else{
+                echo "Nie jesteś zalogowany";
+            }
+            }    
+            ?>
+        </p>
+        <p>Link do srony wylogowania<a href="wyloguj.php">Wyloguj</a><p>    
+    </footer>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+<?php
+    session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+    <h2>Strona wylogowania</h2>
+    <?php
+    if(isset($_SESSION['zalogowany'])){
+         if($_SESSION['zalogowany']){
+         echo "Jesteś zalogowany";
+     }else{
+         echo "Nie jesteś zalogowany";
+     }
+     }
+     ?>
+    <form method="POST">
+        <label>Czy chcesz soe wylogować</label><br>
+        <input type="radio" name="wybor" value="tak"></label>Tak</label>
+        <br>
+        <input type="radio" name="wybor" value="nie"></label>Nie</label>
+        <br>
+        <input type="submit" value="Wyślij">
+    </form>
+    <?php
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        if(empty($_POST['wybor'])){
+            echo "brak wyboru";
+        }else{
+            if($_POST['wybor']=="tak"){
+                session_unset();
+                session_destroy();
+            }
+        }
+    }
+    ?>
+    <p>Link do strony głównej<a href="index.php">Strona</a></p>
+    </main>     
+</body>
+</html>
