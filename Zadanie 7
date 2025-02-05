@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ryby - Wędkowanie</title>
+    <link rel="stylesheet" href="styl_1.css">
+</head>
+<body>
+ 
+    <div class="lewy">
+        <h2>Ryby zamieszkujące rzeki</h2>
+        <ol>
+ 
+ 
+ 
+ 
+<?php
+$host = 'localhost';
+$user = 'root';
+$password = ''; 
+$dbname = 'wedkowanie';
+ 
+// Create connection
+$conn = mysqli_connect($host, $user, $password, $dbname);
+ 
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+ 
+// SQL query to select fish names, water bodies, and provinces for rivers
+$sql = "SELECT ryby.nazwa, lowisko.akwen, lowisko.wojewodztwo 
+        FROM ryby 
+        INNER JOIN lowisko ON ryby.id = lowisko.Ryby_id 
+        WHERE lowisko.rodzaj = 3;";
+ 
+$wynik = mysqli_query($conn, $sql);
+ 
+// sprawdza cy dobrze
+if ($wynik) {
+    while ($wiersz = mysqli_fetch_array($wynik)) {
+        echo "<li>" . ($wiersz['nazwa']) . " plywa w rzece " . ($wiersz['akwen']) . " , " . ($wiersz['wojewodztwo']) . "</li>";
+    }
+} 
+ 
+ 
+?>
+        </ol>
+    </div>
+ 
+ 
+    <div class="prawy">
+        <h2>Ryby drapieżne naszych wód</h2>
+        <table>
+            <tr>
+                <th>Lp.</th>
+                <th>Gatunek</th>
+                <th>Występowanie</th>
+            </tr>
+            <?php
+ 
+            $sql2 = "SELECT id, nazwa AS gatunek, wystepowanie FROM ryby";
+            $results2 = $conn->query($sql2);
+ 
+ 
+            if ($results2->num_rows > 0) {
+                while ($row = $results2->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" . $row['gatunek'] . "</td>";
+                    echo "<td>" . $row['wystepowanie'] . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='3'>Brak danych</td></tr>";
+            }
+            ?>
+        </table>
+    </div>
+</body>
+</html>
+<?php
+ 
+$conn->close();
+?>
