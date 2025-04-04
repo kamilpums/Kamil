@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <button onclick="funkcja4()">Funkcja 4</button>
+    <button onclick="funkcja5()">Funkcja 5</button>
+    <p id="wynik">Tutaj pojawi sie wynik</p>
+    <script>
+    function funkcja1(){
+            let liczba1=parseInt(document.getElementById("liczba1").value);
+            let liczba2=parseInt(document.getElementById("liczba2").value);
+            if(liczba1>liczba2){
+                document.getElementById("wynik").innerHTML="liczba "+liczba1+" jest wieksza niz"+liczba2;
+            }else if(liczba1==liczba2){
+                document.getElementById("wynik").innerHTML="liczba "+liczba1+" jest równa liczbie "+liczba2;
+            }else{
+                document.getElementById("wynik").innerHTML="liczba "+liczba2+" jest większa niż"+liczba1;
+            }
+        }    
+        function porownaj(liczba1,liczba2){
+            if(liczba1>liczba2){
+                document.getElementById("wynik").innerHTML="liczba "+liczba1+" jest wieksza niz"+liczba2;
+            }else if(liczba1==liczba2){
+                document.getElementById("wynik").innerHTML="liczba "+liczba1+" jest równa liczbie "+liczba2;
+            }else{
+                document.getElementById("wynik").innerHTML="liczba "+liczba2+" jest większa niż"+liczba1;
+            }
+        }
+        function funkcja2(){
+            let liczba1=parseInt(document.getElementById("liczba1").value);
+            let liczba2=parseInt(document.getElementById("liczba2").value);
+            porownaj(liczba1,liczba2);
+        }
+        function funkcja3(){
+            let los1=Math.floor(Math.random()*101);
+            let los2=Math.floor(Math.random()*1001);
+            porownaj(los1,los2);
+            
+        }
+    </script>
+</body>
+</html>
