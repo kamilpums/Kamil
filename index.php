@@ -1,21 +1,14 @@
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'egzazminkom');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamil</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-    <h1>Pierwsze zadanie z PHP</h1>
-    <?php
-       $imie = 'Cygan';
-       $liczba = 10;
-       $liczba1 = 4.5;
-       echo "<h3>$imie wyłączył <i>zasilanie</i></h3>";
-       echo '<h3>' . $imie .' wyłączył'. $liczba . ' <i>zasilanie</i></h3>';
-       echo $liczba1;
-       echo '<br>';
-       echo $liczba+$liczba1;
-    ?>    
-</body>
-</html> 
